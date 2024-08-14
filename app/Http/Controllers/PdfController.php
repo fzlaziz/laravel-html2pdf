@@ -27,7 +27,7 @@ class PdfController extends Controller
             "Total" => "Rp 14.495.829,50"
         ];
         
-        $pdf = Pdf::loadView('pdf.template', compact('data','payments'));
+        $pdf = Pdf::setPaper('a4')->loadView('pdf.template', compact('data','payments'));
         return $pdf->stream();
         // return $pdf->download('template.pdf');
     }

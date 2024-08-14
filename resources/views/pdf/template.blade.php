@@ -39,19 +39,16 @@
         .page-number:before {
             content: counter(page);
         }
-        /* footer {
+        footer {
             position: fixed; 
-            bottom: -60px; 
+            bottom: -75px; 
             left: 0px; 
             right: 0px;
             height: 50px; 
-
-
-            background-color: #03a9f4;
-            color: white;
+            color: black;
             text-align: center;
             line-height: 35px;
-        } */
+        }
 
         .content {
             width: 100%;
@@ -60,6 +57,7 @@
             display: table;
             width: 100%;
             margin-bottom: 5px;
+            font-size: 0.8rem;
         }
         .label {
             display: table-cell;
@@ -70,6 +68,21 @@
             display: table-cell;
             text-align: right;
             width: 50%;
+        }
+        .label-one-third{
+            display: table-cell;
+            text-align: left;
+            width: 33%;
+        }
+        .value-one-third-middle{
+            display: table-cell;
+            text-align: center;
+            width: 33%;
+        }
+        .value-one-third-right{
+            display: table-cell;
+            text-align: right;
+            width: 33%;
         }
         .label, .value{
             font-size: 0.8rem;
@@ -99,10 +112,10 @@
             <span class="page-number"></span>
         </div>
     </header>
-    <!-- 
+    
     <footer>
         Copyright &copy; <?php echo date("Y");?> 
-    </footer> -->
+    </footer>
 
 
     <main> 
@@ -111,7 +124,7 @@
         <div class="content bold">
             <div class="row">
                 <div class="label">Date : <?php echo date("d/m/Y");?></div>
-                <div class="value">Company: P-Eatery & Hi Bi Ni U Coffee</div>
+                <div class="value">Company: Example</div>
             </div>
             <hr class="thin-hr">
             <div class="row">
@@ -181,7 +194,28 @@
 
             @endforeach
 
-            <div style="margin-top:50px"></div>
+        </div>
+        
+        <div style="margin-top:50px"></div>
+        <div class="content">
+            <div class="row">
+                <div class="label" style="font-size:1.5rem">Three Column's Data</div>
+            </div>
+            <div class="mb"></div>
+            <div class="row">
+                <div class="label-one-third">Label</div>
+                <div class="value-one-third-middle">Quantity</div>
+                <div class="value-one-third-right">Value</div>
+            </div>
+            <hr>
+            @for($i=0;$i<5;$i++)
+                <div class="row">
+                    <div class="label-one-third">Label Value</div>
+                    <div class="value-one-third-middle">{{ $i }}</div>
+                    <div class="value-one-third-right">Rp{{ $i * 10000}},00</div>
+                </div>
+                <hr class="thin-hr">
+            @endfor
         </div>
 
     </main>
