@@ -84,6 +84,21 @@
             text-align: right;
             width: 33%;
         }
+        .label-one-fourth{
+            display: table-cell;
+            text-align: left;
+            width: 25%;
+        }
+        .value-one-fourth{
+            display: table-cell;
+            text-align: center;
+            width: 25%;
+        }
+        .value-one-fourth-end{
+            display: table-cell;
+            text-align: right;
+            width: 25%
+        }
         .label, .value{
             font-size: 0.8rem;
         }
@@ -213,6 +228,30 @@
                     <div class="label-one-third">Label Value</div>
                     <div class="value-one-third-middle">{{ $i }}</div>
                     <div class="value-one-third-right">Rp{{ $i * 10000}},00</div>
+                </div>
+                <hr class="thin-hr">
+            @endfor
+        </div>
+
+        <div style="margin-top:50px"></div>
+        <div class="content">
+            <div class="row">
+                <div class="label" style="font-size:1.5rem">Four Column's Data</div>
+            </div>
+            <div class="mb"></div>
+            <div class="row">
+                <div class="label-one-fourth">Label</div>
+                <div class="value-one-fourth">Value</div>
+                <div class="value-one-fourth">Value</div>
+                <div class="value-one-fourth-end">Value</div>
+            </div>
+            <hr>
+            @for($i=0;$i<5;$i++)
+                <div class="row">
+                    <div class="label-one-fourth">Label Value</div>
+                    <div class="value-one-fourth">{{ $i }}</div>
+                    <div class="value-one-fourth">{{ $i }}</div>
+                    <div class="value-one-fourth-end">Rp{{ $i * 10000}},00</div>
                 </div>
                 <hr class="thin-hr">
             @endfor
